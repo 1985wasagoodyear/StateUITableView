@@ -13,6 +13,7 @@
 		3F48BC16217E05E2007CF44B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F48BC15217E05E2007CF44B /* Assets.xcassets */; };
 		3F48BC19217E05E2007CF44B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F48BC17217E05E2007CF44B /* LaunchScreen.storyboard */; };
 		3F48BC23217E061A007CF44B /* StateTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F48BC22217E061A007CF44B /* StateTableView.m */; };
+		3F48BC2C217E1E9E007CF44B /* StateTableView+ErrorMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F48BC2B217E1E9E007CF44B /* StateTableView+ErrorMessages.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,9 @@
 		3F48BC25217E0656007CF44B /* StateEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StateEnum.h; sourceTree = "<group>"; };
 		3F48BC26217E0736007CF44B /* StateTableViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StateTableViewProtocol.h; sourceTree = "<group>"; };
 		3F48BC27217E09CD007CF44B /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		3F48BC2B217E1E9E007CF44B /* StateTableView+ErrorMessages.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "StateTableView+ErrorMessages.m"; sourceTree = "<group>"; };
+		3F48BC2D217E1FE2007CF44B /* StateTableView+ErrorMessages.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StateTableView+ErrorMessages.h"; sourceTree = "<group>"; };
+		3F48BC2E217E229B007CF44B /* StateTableViewErrorProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StateTableViewErrorProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +83,11 @@
 			children = (
 				3F48BC25217E0656007CF44B /* StateEnum.h */,
 				3F48BC26217E0736007CF44B /* StateTableViewProtocol.h */,
+				3F48BC2E217E229B007CF44B /* StateTableViewErrorProtocol.h */,
 				3F48BC21217E061A007CF44B /* StateTableView.h */,
 				3F48BC22217E061A007CF44B /* StateTableView.m */,
+				3F48BC2D217E1FE2007CF44B /* StateTableView+ErrorMessages.h */,
+				3F48BC2B217E1E9E007CF44B /* StateTableView+ErrorMessages.m */,
 				3F48BC27217E09CD007CF44B /* README */,
 			);
 			path = TableView;
@@ -165,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F48BC2C217E1E9E007CF44B /* StateTableView+ErrorMessages.m in Sources */,
 				3F48BC23217E061A007CF44B /* StateTableView.m in Sources */,
 				3F48BC11217E05E1007CF44B /* TestDriverViewController.swift in Sources */,
 				3F48BC0F217E05E1007CF44B /* AppDelegate.swift in Sources */,

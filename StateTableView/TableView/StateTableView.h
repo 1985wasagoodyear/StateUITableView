@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "StateEnum.h"
 #import "StateTableViewProtocol.h"
+#import "StateTableViewErrorProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) TableViewState currentState;
 
 @property (nonatomic, weak) id<StateTableViewProtocol> stateDelegate;
+@property (nonatomic, weak) id<StateTableViewErrorProtocol> errorDelegate;
 
 @end
 

@@ -22,6 +22,7 @@ class TestDriverViewController: UIViewController, StateTableViewProtocol {
         super.viewDidLoad()
 
         self.stateTableView.stateDelegate = self
+        self.stateTableView.errorDelegate = self
         self.stateTableView.currentState = .empty
         
         self.stateTableView.register(UITableViewCell.self, forCellReuseIdentifier: CELL_IDENTIFIER)
@@ -47,7 +48,7 @@ class TestDriverViewController: UIViewController, StateTableViewProtocol {
     
 }
 
-extension TestDriverViewController:  UITableViewDataSource {
+extension TestDriverViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -63,4 +64,34 @@ extension TestDriverViewController:  UITableViewDataSource {
         return cell
     }
     
+}
+
+extension TestDriverViewController: StateTableViewErrorProtocol {
+    func loadingMessage(forStateTableRect rect: CGRect) -> UIView! {
+        let activityIndicator = UIActivityIndicatorView(frame: rect)
+        activityIndicator.style = .whiteLarge
+        activityIndicator.color = UIColor.red
+        activityIndicator.startAnimating()
+        return activityIndicator
+    }
+    
+    func errorMessage(forStateTableRect rect: CGRect) -> UIView! {
+        return self.defaultErrorMessage(text: "There was an error processing your request", rect: rect)
+    }
+    
+    func emptyMessage(forStateTableRect rect: CGRect) -> UIView! {
+        return self.defaultErrorMessage(text: "There is no data to show", rect: rect)
+    }
+    
+    func defaultErrorMessage(text: String, rect: CGRect) -> UIView {
+        let errorLabel = UILabel(frame: rect)
+        errorLabel.text = text
+        errorLabel.textColor = .black
+        errorLabel.numberOfLines = 0
+        errorLabel.textAlignment = .center
+        errorLabel.font = UIFont.systemFont(ofSize: 14.0)
+        errorLabel.sizeToFit()
+        return errorLabel
+    }
+
 }

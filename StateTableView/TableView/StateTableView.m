@@ -7,19 +7,23 @@
 //
 
 #import "StateTableView.h"
+#import "StateTableView+ErrorMessages.h"
 
 #define currentStateKeyPath @"currentState"
 
 @interface StateTableView () <UITableViewDataSource>
 
+@property (nonatomic) UITableViewCellSeparatorStyle currSeparatorStyle;
+
 @end
 
 @implementation StateTableView
 
+// MARK: Lifecycle Methods
+
 - (id)init {
-    if (self = [super init])  {
+    if (self = [super init]) {
         self.currentState = TableViewStateEmpty;
-        self.dataSource = self;
     }
     return self;
 }
@@ -32,44 +36,9 @@
     [super awakeFromNib];
 }
 
-// MARK: KVO Implementation for simple binding to tableView's state changes
-
-- (void)setStateDelegate:(id<StateTableViewProtocol>)stateDelegate {
-    [self addObserver:self
-           forKeyPath:currentStateKeyPath
-              options:NSKeyValueObservingOptionNew
-              context:nil];
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath
-                      ofObject:(id)object
-                        change:(NSDictionary<NSKeyValueChangeKey,id> *)change
-                       context:(void *)context {
-    if ([keyPath isEqualToString:currentStateKeyPath] == YES) {
-        [self reloadData];
-    }
-}
-
-- (void)reloadData {
-    switch (self.currentState) {
-        case TableViewStateLoading:
-            [self showEmptyMessage:@"Loading"];
-            break;
-        case TableViewStateError:
-            [self showEmptyMessage:@"Error"];
-            break;
-        case TableViewStateEmpty:
-            [self showEmptyMessage:@"Empty"];
-            break;
-        default:
-            [self hideSpecialMessage];
-            break;
-    }
-    [super reloadData];
-}
+// MARK: UITableView Data Source Methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
     NSInteger num = 0;
     switch (self.currentState) {
         case TableViewStateLoading:
@@ -99,32 +68,23 @@
     return num;
 }
 
-- (UITableViewCell *)cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [self.stateDelegate tableView:self cellForRowAtIndexPath:indexPath];
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [self.stateDelegate tableView:tableView cellForRowAtIndexPath:indexPath];
 }
 
-// https://stackoverflow.com/questions/15746745/handling-an-empty-uitableview-print-a-friendly-message
-- (void)showEmptyMessage:(NSString *)string {
-    CGRect rect = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
-    UILabel *messageLabel = [[UILabel alloc] initWithFrame:rect];
-    messageLabel.text = string;
-    messageLabel.textColor = [UIColor blackColor];
-    messageLabel.numberOfLines = 0;
-    messageLabel.textAlignment = NSTextAlignmentCenter;
-    messageLabel.font = [UIFont systemFontOfSize:12.0]; //UIFont(name: "TrebuchetMS", size: 15)
-    [messageLabel sizeToFit];
-    
-    self.backgroundView = messageLabel;
-    self.separatorStyle = UITableViewCellSeparatorStyleNone;
+// MARK: Custom Setter Methods
+
+// set data source when delegate is set
+- (void)setStateDelegate:(id<StateTableViewProtocol>)stateDelegate {
+    _stateDelegate = stateDelegate;
+    _currSeparatorStyle = self.separatorStyle;
+    self.dataSource = self;
 }
 
-- (void)hideSpecialMessage {
-    self.backgroundView = nil;
-    self.separatorStyle = self.stateDelegate.separatorStyle;
+// update the table each time the state changes
+- (void)setCurrentState:(TableViewState)currentState {
+    _currentState = currentState;
+    [self reloadTableData];
 }
 
 @end
