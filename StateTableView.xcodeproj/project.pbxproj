@@ -8,20 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		3F48BC0F217E05E1007CF44B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F48BC0E217E05E1007CF44B /* AppDelegate.swift */; };
-		3F48BC11217E05E1007CF44B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F48BC10217E05E1007CF44B /* ViewController.swift */; };
+		3F48BC11217E05E1007CF44B /* TestDriverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F48BC10217E05E1007CF44B /* TestDriverViewController.swift */; };
 		3F48BC14217E05E1007CF44B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F48BC12217E05E1007CF44B /* Main.storyboard */; };
 		3F48BC16217E05E2007CF44B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F48BC15217E05E2007CF44B /* Assets.xcassets */; };
 		3F48BC19217E05E2007CF44B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F48BC17217E05E2007CF44B /* LaunchScreen.storyboard */; };
+		3F48BC23217E061A007CF44B /* StateTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F48BC22217E061A007CF44B /* StateTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3F48BC0B217E05E1007CF44B /* StateTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StateTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F48BC0E217E05E1007CF44B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3F48BC10217E05E1007CF44B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3F48BC10217E05E1007CF44B /* TestDriverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDriverViewController.swift; sourceTree = "<group>"; };
 		3F48BC13217E05E1007CF44B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F48BC15217E05E2007CF44B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F48BC18217E05E2007CF44B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F48BC1A217E05E2007CF44B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F48BC20217E061A007CF44B /* StateTableView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StateTableView-Bridging-Header.h"; sourceTree = "<group>"; };
+		3F48BC21217E061A007CF44B /* StateTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StateTableView.h; sourceTree = "<group>"; };
+		3F48BC22217E061A007CF44B /* StateTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StateTableView.m; sourceTree = "<group>"; };
+		3F48BC25217E0656007CF44B /* StateEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StateEnum.h; sourceTree = "<group>"; };
+		3F48BC26217E0736007CF44B /* StateTableViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StateTableViewProtocol.h; sourceTree = "<group>"; };
+		3F48BC27217E09CD007CF44B /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +61,36 @@
 		3F48BC0D217E05E1007CF44B /* StateTableView */ = {
 			isa = PBXGroup;
 			children = (
+				3F48BC29217E0B89007CF44B /* DefaultCells */,
+				3F48BC24217E0626007CF44B /* TableView */,
 				3F48BC0E217E05E1007CF44B /* AppDelegate.swift */,
-				3F48BC10217E05E1007CF44B /* ViewController.swift */,
+				3F48BC10217E05E1007CF44B /* TestDriverViewController.swift */,
 				3F48BC12217E05E1007CF44B /* Main.storyboard */,
 				3F48BC15217E05E2007CF44B /* Assets.xcassets */,
 				3F48BC17217E05E2007CF44B /* LaunchScreen.storyboard */,
 				3F48BC1A217E05E2007CF44B /* Info.plist */,
+				3F48BC20217E061A007CF44B /* StateTableView-Bridging-Header.h */,
 			);
 			path = StateTableView;
+			sourceTree = "<group>";
+		};
+		3F48BC24217E0626007CF44B /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				3F48BC25217E0656007CF44B /* StateEnum.h */,
+				3F48BC26217E0736007CF44B /* StateTableViewProtocol.h */,
+				3F48BC21217E061A007CF44B /* StateTableView.h */,
+				3F48BC22217E061A007CF44B /* StateTableView.m */,
+				3F48BC27217E09CD007CF44B /* README */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		3F48BC29217E0B89007CF44B /* DefaultCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DefaultCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +125,7 @@
 				TargetAttributes = {
 					3F48BC0A217E05E1007CF44B = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -135,7 +165,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F48BC11217E05E1007CF44B /* ViewController.swift in Sources */,
+				3F48BC23217E061A007CF44B /* StateTableView.m in Sources */,
+				3F48BC11217E05E1007CF44B /* TestDriverViewController.swift in Sources */,
 				3F48BC0F217E05E1007CF44B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,14 +313,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = StateTableView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = KevinYu.StateTableView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "StateTableView/StateTableView-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -299,14 +334,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = StateTableView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = KevinYu.StateTableView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "StateTableView/StateTableView-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
