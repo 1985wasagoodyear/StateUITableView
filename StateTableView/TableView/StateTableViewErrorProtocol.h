@@ -9,8 +9,10 @@
 #ifndef StateTableViewErrorProtocol_h
 #define StateTableViewErrorProtocol_h
 
+/// Protocol for a Delegate to handle Loading, Error, and Empty cases
 @protocol StateTableViewErrorProtocol <NSObject>
 
+@optional
 - (UIView *)loadingMessageForStateTableRect:(CGRect)rect;
 - (UIView *)errorMessageForStateTableRect:(CGRect)rect;
 - (UIView *)emptyMessageForStateTableRect:(CGRect)rect;

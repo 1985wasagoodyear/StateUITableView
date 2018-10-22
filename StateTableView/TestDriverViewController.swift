@@ -12,17 +12,20 @@ class TestDriverViewController: UIViewController, StateTableViewProtocol {
 
     @IBOutlet weak var stateTableView: StateTableView!
     
-    var separatorStyle: UITableViewCell.SeparatorStyle = .singleLine
-    
     let CELL_IDENTIFIER = "cell"
-    
     let datums = ["duck", "dog", "goose"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // set up delegates
         self.stateTableView.stateDelegate = self
         self.stateTableView.errorDelegate = self
+        
+        // set up some flags for handling default behavior
+        self.stateTableView.useDefaultErrors = true
+        
+        // set current state
         self.stateTableView.currentState = .empty
         
         self.stateTableView.register(UITableViewCell.self, forCellReuseIdentifier: CELL_IDENTIFIER)
@@ -30,8 +33,8 @@ class TestDriverViewController: UIViewController, StateTableViewProtocol {
 
     
     // MARK: Test Driver Buttons
-    // any webservices or long-running tasks should just change the stateTableView's currentState
-    // at each important interval
+    // any webservices or long-running tasks should just
+    // change the stateTableView's currentState at each important interval
     
     @IBAction func loadButtonAction(_ sender: Any) {
         self.stateTableView.currentState = .loading
@@ -83,6 +86,7 @@ extension TestDriverViewController: StateTableViewErrorProtocol {
         return self.defaultErrorMessage(text: "There is no data to show", rect: rect)
     }
     
+    /// helper method for error message label generation
     func defaultErrorMessage(text: String, rect: CGRect) -> UIView {
         let errorLabel = UILabel(frame: rect)
         errorLabel.text = text

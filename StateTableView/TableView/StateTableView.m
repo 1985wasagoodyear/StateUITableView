@@ -24,6 +24,7 @@
 - (id)init {
     if (self = [super init]) {
         self.currentState = TableViewStateEmpty;
+        self.useDefaultErrors = YES;
     }
     return self;
 }
@@ -34,6 +35,22 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+}
+
+
+// MARK: Custom Setter Methods
+
+// set data source when delegate is set
+- (void)setStateDelegate:(id<StateTableViewProtocol>)stateDelegate {
+    _stateDelegate = stateDelegate;
+    _currSeparatorStyle = self.separatorStyle;
+    self.dataSource = self;
+}
+
+// update the table each time the state changes
+- (void)setCurrentState:(TableViewState)currentState {
+    _currentState = currentState;
+    [self reloadTableData];
 }
 
 // MARK: UITableView Data Source Methods
@@ -70,21 +87,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [self.stateDelegate tableView:tableView cellForRowAtIndexPath:indexPath];
-}
-
-// MARK: Custom Setter Methods
-
-// set data source when delegate is set
-- (void)setStateDelegate:(id<StateTableViewProtocol>)stateDelegate {
-    _stateDelegate = stateDelegate;
-    _currSeparatorStyle = self.separatorStyle;
-    self.dataSource = self;
-}
-
-// update the table each time the state changes
-- (void)setCurrentState:(TableViewState)currentState {
-    _currentState = currentState;
-    [self reloadTableData];
 }
 
 @end

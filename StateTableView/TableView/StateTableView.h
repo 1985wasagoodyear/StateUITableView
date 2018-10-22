@@ -13,9 +13,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// Tableview with handling for different states
 @interface StateTableView : UITableView
 
+/// Superview should change this to display different states of tableView.
 @property (nonatomic) TableViewState currentState;
+
+/// Set YES to use faults, set NO when implementing StateTableViewErrorProtocol methods.
+@property BOOL useDefaultErrors;
 
 @property (nonatomic, weak) id<StateTableViewProtocol> stateDelegate;
 @property (nonatomic, weak) id<StateTableViewErrorProtocol> errorDelegate;

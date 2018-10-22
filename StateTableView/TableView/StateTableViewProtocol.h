@@ -9,9 +9,9 @@
 #ifndef StateTableViewProtocol_h
 #define StateTableViewProtocol_h
 
-@protocol StateTableViewProtocol <UITableViewDataSource>
 
-@property UITableViewCellSeparatorStyle separatorStyle;
+/// Adopter must be of type UITableViewDataSource
+@protocol StateTableViewProtocol <UITableViewDataSource>
 
 @end
 

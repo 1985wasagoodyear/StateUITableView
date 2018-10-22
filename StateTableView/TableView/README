@@ -20,6 +20,14 @@ Idea:
 
 Concept of connections:
 
--some ViewController/DataSource/etc with a TableView
--some manager that handles networking/loading data/etc
--some TableView (that this subclasses)
+-   some ViewController/DataSource/etc with a TableView
+-   some manager that handles networking/loading data/etc
+-   some TableView (that this subclasses)
+
+How it works:
+
+-   some VC creates a TableView and subclasses it as StateTableView
+-   VC sets delegates for protocol and errorProtocol
+-   StateTableView is the TableViewDataSource for the tableView but if there is data,
+    it asks the VC's TableViewDataSource methods via delegate chaining
+-   Shows different errors otherwise, via ErrorProtocol or by default

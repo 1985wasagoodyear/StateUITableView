@@ -34,21 +34,26 @@
 // MARK: Special Messages
 
 - (void)showErrorView:(UIView *)view {
-    self.backgroundView = view;
-    self.separatorStyle = UITableViewCellSeparatorStyleNone;
+    if (view != nil) {
+        self.backgroundView = view;
+        self.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
 }
 
 // https://stackoverflow.com/questions/15746745/handling-an-empty-uitableview-print-a-friendly-message
 - (UIView *)defaultErrorMessage:(NSString *)string {
-    CGRect rect = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
-    UILabel *messageLabel = [[UILabel alloc] initWithFrame:rect];
-    messageLabel.text = string;
-    messageLabel.textColor = [UIColor blackColor];
-    messageLabel.numberOfLines = 0;
-    messageLabel.textAlignment = NSTextAlignmentCenter;
-    messageLabel.font = [UIFont systemFontOfSize:12.0]; //UIFont(name: "TrebuchetMS", size: 15)
-    [messageLabel sizeToFit];
-    return messageLabel;
+    if (self.useDefaultErrors == YES) {
+        CGRect rect = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
+        UILabel *messageLabel = [[UILabel alloc] initWithFrame:rect];
+        messageLabel.text = string;
+        messageLabel.textColor = [UIColor blackColor];
+        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = NSTextAlignmentCenter;
+        messageLabel.font = [UIFont systemFontOfSize:12.0];
+        [messageLabel sizeToFit];
+        return messageLabel;
+    }
+    return nil;
 }
 
 - (void)showLoadingMessage {
@@ -58,11 +63,13 @@
         loadingView = [self.errorDelegate loadingMessageForStateTableRect:self.frame];
     }
     else {
-        UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:self.frame];
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
-        activityIndicator.color = [UIColor grayColor];
-        [activityIndicator startAnimating];
-        loadingView = activityIndicator;
+        if (self.useDefaultErrors == YES) {
+            UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:self.frame];
+            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
+            activityIndicator.color = [UIColor grayColor];
+            [activityIndicator startAnimating];
+            loadingView = activityIndicator;
+        }
     }
     [self showErrorView:loadingView];
 }
