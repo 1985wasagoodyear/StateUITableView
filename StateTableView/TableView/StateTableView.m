@@ -28,11 +28,11 @@
     }
     return self;
 }
-
+/*
 - (void)dealloc {
     [self removeObserver:self forKeyPath:currentStateKeyPath];
 }
-
+*/
 - (void)awakeFromNib {
     [super awakeFromNib];
 }
