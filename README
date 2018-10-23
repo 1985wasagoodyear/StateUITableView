@@ -31,3 +31,10 @@ How it works:
 -   StateTableView is the TableViewDataSource for the tableView but if there is data,
     it asks the VC's TableViewDataSource methods via delegate chaining
 -   Shows different errors otherwise, via ErrorProtocol or by default
+
+Concerns / Areas to Improve:
+
+-   is it thread-safe?
+-   a bug exists if the tableView's separatorStyle is changed while
+    information it is in any non-loaded state
+        - do other side effects also exist for UITableViewDataSource?
