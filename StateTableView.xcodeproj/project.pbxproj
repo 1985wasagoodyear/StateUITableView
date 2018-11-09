@@ -15,13 +15,13 @@
 		3F48BC14217E05E1007CF44B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F48BC12217E05E1007CF44B /* Main.storyboard */; };
 		3F48BC16217E05E2007CF44B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F48BC15217E05E2007CF44B /* Assets.xcassets */; };
 		3F48BC19217E05E2007CF44B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F48BC17217E05E2007CF44B /* LaunchScreen.storyboard */; };
-		3FBF43102195D9B100943277 /* StateTableView+ErrorMessages.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FBF43092195D9B000943277 /* StateTableView+ErrorMessages.h */; };
+		3FBF43102195D9B100943277 /* StateTableView+ErrorMessages.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FBF43092195D9B000943277 /* StateTableView+ErrorMessages.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FBF43112195D9B100943277 /* StateTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBF430A2195D9B000943277 /* StateTableView.m */; };
 		3FBF43122195D9B100943277 /* StateTableView+ErrorMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBF430B2195D9B000943277 /* StateTableView+ErrorMessages.m */; };
-		3FBF43132195D9B100943277 /* StateTableViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FBF430C2195D9B000943277 /* StateTableViewProtocol.h */; };
-		3FBF43142195D9B100943277 /* StateTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FBF430D2195D9B000943277 /* StateTableView.h */; };
+		3FBF43132195D9B100943277 /* StateTableViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FBF430C2195D9B000943277 /* StateTableViewProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3FBF43142195D9B100943277 /* StateTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FBF430D2195D9B000943277 /* StateTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FBF43152195D9B100943277 /* StateEnum.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FBF430E2195D9B000943277 /* StateEnum.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3FBF43162195D9B100943277 /* StateTableViewErrorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FBF430F2195D9B100943277 /* StateTableViewErrorProtocol.h */; };
+		3FBF43162195D9B100943277 /* StateTableViewErrorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FBF430F2195D9B100943277 /* StateTableViewErrorProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -489,7 +489,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = KevinYu.StateTableView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "StateTableView/StateTableView-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -510,7 +511,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = KevinYu.StateTableView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "StateTableView/StateTableView-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
