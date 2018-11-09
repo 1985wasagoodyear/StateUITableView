@@ -16,4 +16,8 @@ FOUNDATION_EXPORT const unsigned char StateUITableViewVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <StateUITableView/PublicHeader.h>
 
-//#import "StateTableView.h"
+#import <StateUITableView/StateEnum.h>
+#import <StateUITableView/StateTableView.h>
+#import <StateUITableView/StateTableView+ErrorMessages.h>
+#import <StateUITableView/StateTableViewProtocol.h>
+#import <StateUITableView/StateTableViewErrorProtocol.h>

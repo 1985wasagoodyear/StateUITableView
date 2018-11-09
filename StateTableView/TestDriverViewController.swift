@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StateUITableView
 
 class TestDriverViewController: UIViewController, StateTableViewProtocol {
 

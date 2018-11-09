@@ -11,17 +11,17 @@
 		3F1E8BF0217F5D45009A7970 /* StateUITableView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1E8BE9217F5D45009A7970 /* StateUITableView.framework */; };
 		3F1E8BF1217F5D45009A7970 /* StateUITableView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1E8BE9217F5D45009A7970 /* StateUITableView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3F1E8BFD217F5DF7009A7970 /* TestDriverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F48BC10217E05E1007CF44B /* TestDriverViewController.swift */; };
-		3F1E8C08217F67B0009A7970 /* StateTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1E8C01217F67B0009A7970 /* StateTableView.h */; };
-		3F1E8C09217F67B0009A7970 /* StateEnum.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1E8C02217F67B0009A7970 /* StateEnum.h */; };
-		3F1E8C0A217F67B0009A7970 /* StateTableView+ErrorMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E8C03217F67B0009A7970 /* StateTableView+ErrorMessages.m */; };
-		3F1E8C0B217F67B0009A7970 /* StateTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E8C04217F67B0009A7970 /* StateTableView.m */; };
-		3F1E8C0C217F67B0009A7970 /* StateTableViewErrorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1E8C05217F67B0009A7970 /* StateTableViewErrorProtocol.h */; };
-		3F1E8C0D217F67B0009A7970 /* StateTableViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1E8C06217F67B0009A7970 /* StateTableViewProtocol.h */; };
-		3F1E8C0E217F67B0009A7970 /* StateTableView+ErrorMessages.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1E8C07217F67B0009A7970 /* StateTableView+ErrorMessages.h */; };
 		3F48BC0F217E05E1007CF44B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F48BC0E217E05E1007CF44B /* AppDelegate.swift */; };
 		3F48BC14217E05E1007CF44B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F48BC12217E05E1007CF44B /* Main.storyboard */; };
 		3F48BC16217E05E2007CF44B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F48BC15217E05E2007CF44B /* Assets.xcassets */; };
 		3F48BC19217E05E2007CF44B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F48BC17217E05E2007CF44B /* LaunchScreen.storyboard */; };
+		3FBF43102195D9B100943277 /* StateTableView+ErrorMessages.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FBF43092195D9B000943277 /* StateTableView+ErrorMessages.h */; };
+		3FBF43112195D9B100943277 /* StateTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBF430A2195D9B000943277 /* StateTableView.m */; };
+		3FBF43122195D9B100943277 /* StateTableView+ErrorMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBF430B2195D9B000943277 /* StateTableView+ErrorMessages.m */; };
+		3FBF43132195D9B100943277 /* StateTableViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FBF430C2195D9B000943277 /* StateTableViewProtocol.h */; };
+		3FBF43142195D9B100943277 /* StateTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FBF430D2195D9B000943277 /* StateTableView.h */; };
+		3FBF43152195D9B100943277 /* StateEnum.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FBF430E2195D9B000943277 /* StateEnum.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3FBF43162195D9B100943277 /* StateTableViewErrorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FBF430F2195D9B100943277 /* StateTableViewErrorProtocol.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,13 +52,6 @@
 		3F1E8BE9217F5D45009A7970 /* StateUITableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StateUITableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F1E8BEB217F5D45009A7970 /* StateUITableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StateUITableView.h; sourceTree = "<group>"; };
 		3F1E8BEC217F5D45009A7970 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F1E8C01217F67B0009A7970 /* StateTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StateTableView.h; path = StateUITableView/TableView/StateTableView.h; sourceTree = SOURCE_ROOT; };
-		3F1E8C02217F67B0009A7970 /* StateEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StateEnum.h; path = StateUITableView/TableView/StateEnum.h; sourceTree = SOURCE_ROOT; };
-		3F1E8C03217F67B0009A7970 /* StateTableView+ErrorMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "StateTableView+ErrorMessages.m"; path = "StateUITableView/TableView/StateTableView+ErrorMessages.m"; sourceTree = SOURCE_ROOT; };
-		3F1E8C04217F67B0009A7970 /* StateTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StateTableView.m; path = StateUITableView/TableView/StateTableView.m; sourceTree = SOURCE_ROOT; };
-		3F1E8C05217F67B0009A7970 /* StateTableViewErrorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StateTableViewErrorProtocol.h; path = StateUITableView/TableView/StateTableViewErrorProtocol.h; sourceTree = SOURCE_ROOT; };
-		3F1E8C06217F67B0009A7970 /* StateTableViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StateTableViewProtocol.h; path = StateUITableView/TableView/StateTableViewProtocol.h; sourceTree = SOURCE_ROOT; };
-		3F1E8C07217F67B0009A7970 /* StateTableView+ErrorMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "StateTableView+ErrorMessages.h"; path = "StateUITableView/TableView/StateTableView+ErrorMessages.h"; sourceTree = SOURCE_ROOT; };
 		3F48BC0B217E05E1007CF44B /* StateTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StateTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F48BC0E217E05E1007CF44B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F48BC10217E05E1007CF44B /* TestDriverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDriverViewController.swift; sourceTree = "<group>"; };
@@ -66,8 +59,14 @@
 		3F48BC15217E05E2007CF44B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F48BC18217E05E2007CF44B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F48BC1A217E05E2007CF44B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F48BC20217E061A007CF44B /* StateTableView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StateTableView-Bridging-Header.h"; sourceTree = "<group>"; };
 		3F48BC27217E09CD007CF44B /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		3FBF43092195D9B000943277 /* StateTableView+ErrorMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "StateTableView+ErrorMessages.h"; sourceTree = "<group>"; };
+		3FBF430A2195D9B000943277 /* StateTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateTableView.m; sourceTree = "<group>"; };
+		3FBF430B2195D9B000943277 /* StateTableView+ErrorMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "StateTableView+ErrorMessages.m"; sourceTree = "<group>"; };
+		3FBF430C2195D9B000943277 /* StateTableViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateTableViewProtocol.h; sourceTree = "<group>"; };
+		3FBF430D2195D9B000943277 /* StateTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateTableView.h; sourceTree = "<group>"; };
+		3FBF430E2195D9B000943277 /* StateEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateEnum.h; sourceTree = "<group>"; };
+		3FBF430F2195D9B100943277 /* StateTableViewErrorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateTableViewErrorProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				3F1E8BEB217F5D45009A7970 /* StateUITableView.h */,
-				3F48BC24217E0626007CF44B /* TableView */,
+				3FBF42FA2195D98400943277 /* TableView */,
 				3F1E8BEC217F5D45009A7970 /* Info.plist */,
 			);
 			path = StateUITableView;
@@ -127,24 +126,22 @@
 				3F48BC15217E05E2007CF44B /* Assets.xcassets */,
 				3F48BC17217E05E2007CF44B /* LaunchScreen.storyboard */,
 				3F48BC1A217E05E2007CF44B /* Info.plist */,
-				3F48BC20217E061A007CF44B /* StateTableView-Bridging-Header.h */,
 			);
 			path = StateTableView;
 			sourceTree = "<group>";
 		};
-		3F48BC24217E0626007CF44B /* TableView */ = {
+		3FBF42FA2195D98400943277 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				3F1E8C02217F67B0009A7970 /* StateEnum.h */,
-				3F1E8C01217F67B0009A7970 /* StateTableView.h */,
-				3F1E8C04217F67B0009A7970 /* StateTableView.m */,
-				3F1E8C07217F67B0009A7970 /* StateTableView+ErrorMessages.h */,
-				3F1E8C03217F67B0009A7970 /* StateTableView+ErrorMessages.m */,
-				3F1E8C05217F67B0009A7970 /* StateTableViewErrorProtocol.h */,
-				3F1E8C06217F67B0009A7970 /* StateTableViewProtocol.h */,
+				3FBF430E2195D9B000943277 /* StateEnum.h */,
+				3FBF430D2195D9B000943277 /* StateTableView.h */,
+				3FBF430A2195D9B000943277 /* StateTableView.m */,
+				3FBF43092195D9B000943277 /* StateTableView+ErrorMessages.h */,
+				3FBF430B2195D9B000943277 /* StateTableView+ErrorMessages.m */,
+				3FBF430F2195D9B100943277 /* StateTableViewErrorProtocol.h */,
+				3FBF430C2195D9B000943277 /* StateTableViewProtocol.h */,
 			);
-			name = TableView;
-			path = ../StateTableView/TableView;
+			path = TableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,12 +151,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F1E8C0D217F67B0009A7970 /* StateTableViewProtocol.h in Headers */,
-				3F1E8C0E217F67B0009A7970 /* StateTableView+ErrorMessages.h in Headers */,
-				3F1E8C08217F67B0009A7970 /* StateTableView.h in Headers */,
 				3F1E8BED217F5D45009A7970 /* StateUITableView.h in Headers */,
-				3F1E8C09217F67B0009A7970 /* StateEnum.h in Headers */,
-				3F1E8C0C217F67B0009A7970 /* StateTableViewErrorProtocol.h in Headers */,
+				3FBF43152195D9B100943277 /* StateEnum.h in Headers */,
+				3FBF43102195D9B100943277 /* StateTableView+ErrorMessages.h in Headers */,
+				3FBF43162195D9B100943277 /* StateTableViewErrorProtocol.h in Headers */,
+				3FBF43142195D9B100943277 /* StateTableView.h in Headers */,
+				3FBF43132195D9B100943277 /* StateTableViewProtocol.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,8 +263,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F1E8C0A217F67B0009A7970 /* StateTableView+ErrorMessages.m in Sources */,
-				3F1E8C0B217F67B0009A7970 /* StateTableView.m in Sources */,
+				3FBF43122195D9B100943277 /* StateTableView+ErrorMessages.m in Sources */,
+				3FBF43112195D9B100943277 /* StateTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
