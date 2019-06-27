@@ -11,12 +11,15 @@
 #import "StateTableViewProtocol.h"
 #import "StateTableViewErrorProtocol.h"
 
+typedef UITableViewCellSeparatorStyle SeparatorStyle;
+
 NS_ASSUME_NONNULL_BEGIN
 
 /// Tableview with handling for different states
 @interface StateTableView : UITableView
 
 /// Superview should change this to display different states of tableView.
+/// Default is EMPTY
 @property (nonatomic) TableViewState currentState;
 
 /// Set YES to use faults, set NO when implementing StateTableViewErrorProtocol methods.

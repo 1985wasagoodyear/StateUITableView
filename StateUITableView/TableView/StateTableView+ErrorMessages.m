@@ -101,7 +101,7 @@
 
 - (void)hideSpecialMessage {
     self.backgroundView = nil;
-    self.separatorStyle = (UITableViewCellSeparatorStyle)[self valueForKey:currSeparatorStyleKeyPath];  // cheeky KVC
+    self.separatorStyle = (SeparatorStyle)[self valueForKey:currSeparatorStyleKeyPath];  // cheeky KVC
 }
 
 @end

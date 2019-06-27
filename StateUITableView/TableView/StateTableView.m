@@ -9,11 +9,9 @@
 #import "StateTableView.h"
 #import "StateTableView+ErrorMessages.h"
 
-#define currentStateKeyPath @"currentState"
-
 @interface StateTableView () <UITableViewDataSource>
 
-@property (nonatomic) UITableViewCellSeparatorStyle currSeparatorStyle;
+@property (nonatomic) SeparatorStyle currSeparatorStyle;
 
 @end
 
@@ -23,20 +21,53 @@
 
 - (id)init {
     if (self = [super init]) {
-        self.currentState = TableViewStateEmpty;
-        self.useDefaultErrors = YES;
+        [self commonInit];
     }
     return self;
 }
-/*
-- (void)dealloc {
-    [self removeObserver:self forKeyPath:currentStateKeyPath];
-}
-*/
-- (void)awakeFromNib {
-    [super awakeFromNib];
+
+- (instancetype)initWithCoder:(NSCoder *)coder {
+    self = [super initWithCoder:coder];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
 }
 
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
+}
+
+- (void)commonInit {
+    self.currentState = TableViewStateEmpty;
+    
+    _useDefaultErrors = YES;
+    [self addObserver:self
+           forKeyPath:@"separatorStyle"
+              options:NSKeyValueObservingOptionNew
+              context:nil];
+}
+
+- (void)dealloc {
+    [self removeObserver:self forKeyPath:@"separatorStyle"];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary<NSKeyValueChangeKey,id> *)change
+                       context:(void *)context {
+    if ([keyPath isEqualToString:@"separatorStyle"]
+        && self.currentState != TableViewStateLoaded
+        && self.separatorStyle != UITableViewCellSeparatorStyleNone) {
+        SeparatorStyle style = (SeparatorStyle)change[NSKeyValueChangeNewKey];
+        _currSeparatorStyle = style;
+        self.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
+}
 
 // MARK: Custom Setter Methods
 
@@ -45,6 +76,7 @@
     _stateDelegate = stateDelegate;
     _currSeparatorStyle = self.separatorStyle;
     self.dataSource = self;
+    [self reloadTableData];
 }
 
 // update the table each time the state changes

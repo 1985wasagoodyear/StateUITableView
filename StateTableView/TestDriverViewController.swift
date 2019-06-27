@@ -20,36 +20,35 @@ class TestDriverViewController: UIViewController, StateTableViewProtocol {
         super.viewDidLoad()
 
         // set up delegates
-        self.stateTableView.stateDelegate = self
-        self.stateTableView.errorDelegate = self
+        stateTableView.stateDelegate = self
+        stateTableView.errorDelegate = self
         
         // set up some flags for handling default behavior
-        self.stateTableView.useDefaultErrors = true
+        stateTableView.useDefaultErrors = true
         
-        // set current state
-        self.stateTableView.currentState = .empty
+        // set current state, defaults empty
+        // stateTableView.currentState = .empty
         
-        self.stateTableView.register(UITableViewCell.self, forCellReuseIdentifier: CELL_IDENTIFIER)
+        stateTableView.register(UITableViewCell.self,
+                                     forCellReuseIdentifier: CELL_IDENTIFIER)
     }
-
     
     // MARK: Test Driver Buttons
     // any webservices or long-running tasks should just
     // change the stateTableView's currentState at each important interval
     
     @IBAction func loadButtonAction(_ sender: Any) {
-        self.stateTableView.currentState = .loading
+        stateTableView.currentState = .loading
     }
     @IBAction func errorButtonAction(_ sender: Any) {
-        self.stateTableView.currentState = .error
+        stateTableView.currentState = .error
     }
     @IBAction func emptyButtonAction(_ sender: Any) {
-        self.stateTableView.currentState = .empty
+        stateTableView.currentState = .empty
     }
     @IBAction func doneButtonAction(_ sender: Any) {
-        self.stateTableView.currentState = .loaded
+        stateTableView.currentState = .loaded
     }
-    
 }
 
 extension TestDriverViewController: UITableViewDataSource {
@@ -63,11 +62,11 @@ extension TestDriverViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CELL_IDENTIFIER, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: CELL_IDENTIFIER,
+                                                 for: indexPath)
         cell.textLabel?.text = datums[indexPath.row]
         return cell
     }
-    
 }
 
 extension TestDriverViewController: StateTableViewErrorProtocol {
@@ -80,11 +79,13 @@ extension TestDriverViewController: StateTableViewErrorProtocol {
     }
     
     func errorMessage(forStateTableRect rect: CGRect) -> UIView! {
-        return self.defaultErrorMessage(text: "There was an error processing your request", rect: rect)
+        return defaultErrorMessage(text: "There was an error processing your request",
+                                   rect: rect)
     }
     
     func emptyMessage(forStateTableRect rect: CGRect) -> UIView! {
-        return self.defaultErrorMessage(text: "There is no data to show", rect: rect)
+        return defaultErrorMessage(text: "There is no data to show",
+                                   rect: rect)
     }
     
     /// helper method for error message label generation
@@ -98,5 +99,4 @@ extension TestDriverViewController: StateTableViewErrorProtocol {
         errorLabel.sizeToFit()
         return errorLabel
     }
-
 }
