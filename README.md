@@ -29,6 +29,7 @@ https://www.raywenderlich.com/5542-enum-driven-tableview-development
 -   StateTableView is the TableViewDataSource for the tableView but if there is data,
     it asks the VC's TableViewDataSource methods via delegate chaining
 -   Shows different errors otherwise, via ErrorProtocol or by default
+-   VC can still use UITableViewDelegate for didSelect, etc, delegate methods in addition to state & errorProtocol
 
 
 ## Installation
