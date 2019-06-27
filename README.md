@@ -39,7 +39,7 @@ https://www.raywenderlich.com/5542-enum-driven-tableview-development
 StateUITableView is available through [CocoaPods](https://cocoapods.org):
 
 ```ruby
-pod 'Disintegrate'
+pod 'StateUITableView'
 ```
 
 
